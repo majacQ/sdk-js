@@ -16,7 +16,9 @@
     "build:bundle": "rollup -c",
     "lint": "yarn run eslint --format codeframe --ignore-path .gitignore .",
     "lint:ci": "yarn run eslint --format checkstyle --ignore-path .gitignore .",
-    "test": "yarn run jest"
+    "test": "yarn run jest",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.7.1",
@@ -37,5 +39,9 @@
     "ts-jest": "^26.2.0",
     "tslib": "^2.0.1",
     "typescript": "~3.9.7"
+  },
+  "snyk": true,
+  "dependencies": {
+    "@snyk/protect": "latest"
   }
 }
